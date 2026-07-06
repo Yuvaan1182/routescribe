@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.routescribe/
+*.tgz
+coverage/
+.vscode/
+.DS_Store
+.route-scribe/
