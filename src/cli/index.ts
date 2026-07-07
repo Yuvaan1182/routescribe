@@ -1,25 +1,27 @@
 #!/usr/bin/env node
 
-import { generateCommand } from "./commands";
+import { generateCommand, initCommand } from "./commands";
 
 async function main() {
   const command = process.argv[2];
 
   switch (command) {
+    case "init":
+      await initCommand();
+      break;
+
     case "generate":
       await generateCommand();
       break;
 
     default:
       console.log(`
-        RouteScribe CLI
-
         Usage:
-        routescribe <command>
 
-        Commands:
-        generate     Generate OpenAPI artifacts
-    `);
+        routescribe init
+        routescribe generate`);
+
+      process.exit(1);
   }
 }
 

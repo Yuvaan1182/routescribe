@@ -1,12 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-
-const CONFIG_FILES = [
-  "routescribe.config.ts",
-  "routescribe.config.js",
-  "routescribe.config.mjs",
-  "routescribe.config.cjs",
-] as const;
+import { CONFIG_FILES } from "../constants/constants";
 
 export function findConfig(): string | null {
   for (const file of CONFIG_FILES) {
