@@ -1,6 +1,6 @@
 {
   "name": "routescribe",
-  "version": "1.0.0",
+  "version": "0.1.0-alpha.1",
   "description": "Runtime API documentation and intelligence for Express applications.",
   "author": "Yuvaan Singh",
   "license": "MIT",
