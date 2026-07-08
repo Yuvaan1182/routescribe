@@ -2,7 +2,6 @@ import { existsSync, rmSync } from "node:fs";
 import path from "node:path";
 
 import { afterEach, describe, expect, it } from "vitest";
-
 import { createTempDirectory } from "./helpers/temp-directory";
 import { writeEndpoints } from "../repository";
 import { generateOpenApi } from "../services";
