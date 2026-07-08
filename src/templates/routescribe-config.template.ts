@@ -6,5 +6,12 @@ export const ROUTESCRIBE_CONFIG_TEMPLATE = `module.exports = {
 
   // Directory where RouteScribe stores generated artifacts
   output: "${DEFAULT_OUTPUT_DIRECTORY}",
+  
+  // exact route matching
+  ignores: [
+    // "/health",
+    // "/metrics",
+    // "/internal",
+  ],
 };
 `;
