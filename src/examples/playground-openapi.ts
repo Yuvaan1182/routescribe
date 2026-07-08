@@ -1,3 +1,5 @@
+/** --- These are code testing files build during dev for testing purpose --- */
+
 import { generateOpenApi } from "../services";
 
 async function main() {

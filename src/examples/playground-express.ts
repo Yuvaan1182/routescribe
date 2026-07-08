@@ -1,3 +1,5 @@
+/** --- These are code testing files build during dev for testing purpose --- */
+
 import express from "express";
 import { createRouteScribe } from "../route-scribe";
 import { DEFAULT_OUTPUT_DIRECTORY } from "../constants/constants";
