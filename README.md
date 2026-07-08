@@ -4,29 +4,29 @@ Runtime API Intelligence for Express.
 
 Automatically discover your Express APIs from real traffic and generate accurate OpenAPI 3.1 documentation without decorators, annotations, or manually maintained specification files.
 
-
 [![npm version](https://img.shields.io/npm/v/routescribe)](...)
 [![license](https://img.shields.io/npm/l/routescribe)](...)
 [![Node](https://img.shields.io/node/v/routescribe)](...)
-
-
 
 > ⚠️ **Alpha**
 >
 > RouteScribe is under active development. Breaking changes may occur before v1.0.
 
+---
 
 ## Why RouteScribe?
+
 Most API documentation tools require manually maintaining annotations or OpenAPI files.
 
 RouteScribe takes a different approach.
 
 It observes your application at runtime, discovers your API from real requests, and generates OpenAPI documentation automatically.
 
-- No decorators.
-- No annotations.
-- No duplicated documentation.
+- No decorators
+- No annotations
+- No duplicated documentation
 
+---
 
 ## Features
 
@@ -40,7 +40,7 @@ It observes your application at runtime, discovers your API from real requests, 
 
 RouteScribe continuously improves the generated documentation as your application receives real traffic.
 
-
+---
 
 ## Quick Start
 
@@ -84,20 +84,7 @@ routescribe init
 
 You only need to run this once for each project.
 
-This creates:
-
-```text
-routescribe.config.js
-```
-
-
-```js
-module.exports = {
-  title: "My API",
-  version: "1.0.0",
-  output: ".routescribe",
-};
-```
+> **Tip:** Update the values in `routescribe.config.js` to match your API before generating your OpenAPI document.
 
 ### 4. Run your application
 
@@ -132,7 +119,7 @@ routescribe generate
 ✓ Wrote .routescribe/openapi.yaml
 ```
 
-RouteScribe will generate your OpenAPI specification inside:
+RouteScribe will generate:
 
 ```text
 .routescribe/
@@ -141,17 +128,17 @@ RouteScribe will generate your OpenAPI specification inside:
 └── openapi.yaml
 ```
 
-| File             | Description                                          |
-| ---------------- | ---------------------------------------------------- |
+| File | Description |
+|------|-------------|
 | `endpoints.json` | Runtime observations collected from your application |
-| `openapi.json`   | Generated OpenAPI 3.1 document                       |
-| `openapi.yaml`   | YAML version of the OpenAPI document                 |
+| `openapi.json` | Generated OpenAPI 3.1 document |
+| `openapi.yaml` | YAML version of the OpenAPI document |
 
-
+---
 
 ## Generated OpenAPI
 
-The generated OpenAPI document is ready to use with tools such as Swagger UI, Redoc, and other OpenAPI-compatible tooling.
+The generated OpenAPI document is ready to use with Swagger UI, Redoc, and any OpenAPI-compatible tooling.
 
 <p align="center">
   <img
@@ -161,20 +148,64 @@ The generated OpenAPI document is ready to use with tools such as Swagger UI, Re
   />
 </p>
 
-
-
 🎉 That's it! Your API has now been documented automatically from real traffic.
 
-
-
+---
 
 ## CLI
-| Command                | Description                                 |
-| ---------------------- | ------------------------------------------- |
-| `routescribe init`     | Generate the RouteScribe configuration file |
-| `routescribe generate` | Generate OpenAPI JSON and YAML documents    |
 
+| Command | Description |
+|---------|-------------|
+| `routescribe init` | Generate the RouteScribe configuration file |
+| `routescribe generate` | Generate OpenAPI JSON and YAML documents |
 
+---
+
+## Configuration
+
+`routescribe init` creates a `routescribe.config.js` file.
+
+```js
+module.exports = {
+  title: "My API",
+  version: "1.0.0",
+  output: ".routescribe",
+
+  ignores: [
+    // "/health",
+    // "/metrics",
+  ],
+};
+```
+
+### Configuration Options
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| `title` | API title used in the generated OpenAPI document | `"My API"` |
+| `version` | API version used in the generated OpenAPI document | `"1.0.0"` |
+| `output` | Directory where RouteScribe writes generated files | `".routescribe"` |
+| `ignores` | Routes that should not be captured by RouteScribe | `[]` |
+
+### Ignoring Routes
+
+Some endpoints, such as health checks, metrics, or temporary test routes, usually shouldn't appear in your API documentation.
+
+Add them to the `ignores` array:
+
+```js
+module.exports = {
+  ignores: [
+    "/health",
+    "/metrics",
+    "/test",
+  ],
+};
+```
+
+Requests matching these routes are ignored by the RouteScribe middleware and won't appear in the generated OpenAPI document.
+
+---
 
 ## How it works
 
@@ -183,7 +214,7 @@ The generated OpenAPI document is ready to use with tools such as Swagger UI, Re
 3. **Store** runtime observations in `endpoints.json`.
 4. **Generate** an OpenAPI 3.1 document.
 
-
+---
 
 ## Roadmap
 
@@ -194,7 +225,7 @@ The generated OpenAPI document is ready to use with tools such as Swagger UI, Re
 - Sequence diagrams
 - Runtime intelligence
 
-
+---
 
 ## Contributing
 
@@ -202,16 +233,15 @@ Contributions, bug reports, and feature requests are welcome.
 
 If you're planning a significant change, please open an issue first so we can discuss the design.
 
-
 ---
 
 If RouteScribe helps your project, consider giving it a ⭐ on GitHub.
 
+---
 
 ## License
 
 MIT © Yuvaan Singh
-
 
 ---
 
