@@ -18,10 +18,6 @@ export async function generateOpenApi(options: GenerateOpenApiOptions) {
 
   const document = await generator.generate(repository);
 
-  if (options.writeJson) {
-    await writeJson(paths.openApiJsonFile, document);
-  }
-
   const files: string[] = [];
 
   if (options.writeJson) {
