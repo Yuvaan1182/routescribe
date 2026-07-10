@@ -4,6 +4,10 @@ Runtime API Intelligence for Express.
 
 Automatically discover your Express APIs from real traffic and generate accurate OpenAPI 3.1 documentation without decorators, annotations, or manually maintained specification files.
 
+[![npm version](https://img.shields.io/npm/v/routescribe)](https://www.npmjs.com/package/routescribe)
+[![npm downloads](https://img.shields.io/npm/dm/routescribe)](https://www.npmjs.com/package/routescribe)
+[![License](https://img.shields.io/npm/l/routescribe)](https://github.com/Yuvaan1182/routescribe/blob/main/LICENSE)
+[![Node.js](https://img.shields.io/node/v/routescribe)](https://www.npmjs.com/package/routescribe)
 [![CI](https://github.com/Yuvaan1182/routescribe/actions/workflows/ci.yml/badge.svg)](https://github.com/Yuvaan1182/routescribe/actions/workflows/ci.yml)
 [![GitHub stars](https://img.shields.io/github/stars/Yuvaan1182/routescribe?style=social)](https://github.com/Yuvaan1182/routescribe)
 
