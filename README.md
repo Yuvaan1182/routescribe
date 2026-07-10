@@ -135,6 +135,19 @@ RouteScribe will generate:
 
 ---
 
+
+
+> **Note**
+>
+> RouteScribe is typically installed as a project dependency. Use `npx` to run its CLI commands:
+>
+> ```bash
+> npx routescribe init
+> npx routescribe generate
+> ```
+
+
+
 ## Generated OpenAPI
 
 The generated OpenAPI document is ready to use with Swagger UI, Redoc, and any OpenAPI-compatible tooling.
